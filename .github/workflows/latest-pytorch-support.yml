@@ -5,7 +5,7 @@ on:
     branches:
       - 'workflows/new-pytorch-release-branch'
       - 'workflows/new-pytorch-main-branch'
-      - 'workflows/test-pytorch-workflow'
+      - 'workflows/test-pytorch-workflow-2'
     paths:
       - '.github/pytorch-release-versions/*'
 env:
@@ -45,13 +45,6 @@ jobs:
       - name: Update setup.py
         run: |
           sed -i '/torch>=/ s/'"${{ env.previous_pytorch }}"'/'"${{ env.setup_pytorch }}"'/g' setup.py
-#      - name: Define base branch
-#        run: |
-#          if [[ ${{ github.ref }} =~ .*main.* ]]; then
-#            echo "base_branch=main" >> $GITHUB_ENV
-#          elif [[ ${{ github.ref }} =~ .*release.* ]]; then
-#            echo "base_branch=release/1.2.x" >> $GITHUB_ENV
-#          fi
       - name: Create PR from branch
         uses: peter-evans/create-pull-request@v4
         with:
