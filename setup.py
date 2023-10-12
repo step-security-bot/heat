@@ -27,6 +27,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Science/Research",
         "Topic :: Scientific/Engineering",
@@ -34,7 +35,7 @@ setup(
     install_requires=[
         "mpi4py>=3.0.0",
         "numpy>=1.20.0",
-        "torch>=1.8.0, <2.0.2",
+        "torch>=1.8.0",
         "scipy>=0.14.0",
         "pillow>=6.0.0",
         "torchvision>=0.8.0",
